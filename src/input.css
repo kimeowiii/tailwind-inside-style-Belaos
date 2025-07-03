@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Truculenta:opsz,wght@12..72,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-Truculenta overflow-x-hidden;
+  }
+  .container {
+    @apply max-w-7xl w-full px-4 mx-auto;
+  }
+}
+@layer components {
+  /* Header */
+  .header {
+    @apply shadow-black py-5 bg-semilight fixed  w-full z-50;
+  }
+  .header__wrapper {
+    @apply flex justify-between items-center;
+  }
+  .header__wrapper img {
+    @apply w-24 h-16;
+  }
+  .header__nav {
+    @apply flex max-h-full h-full  fixed w-full flex-col top-[6.2rem] right-[-100%] overflow-hidden md:max-h-none md:h-auto md:relative md:w-auto md:flex-row md:top-auto md:gap-20 xl:gap-[30rem] md:right-auto ease-in-out duration-700;
+  }
+  .header__nav.open {
+    @apply right-0 z-50 overflow-y-hidden ease-in-out duration-700;
+  }
+  .header__nav ul {
+    @apply flex gap-5 flex-row  md:flex-row;
+  }
+  .header__nav ul li a {
+    @apply text-base items-end font-bold text-black hover:text-primary;
+  }
+
+  h2::before {
+    @apply content-[""] bg-primary inline-block w-[55rem] h-1;
+  }
+  h2 {
+    @apply flex items-center;
+  }
+  /* Home */
+  .home__wrapper {
+    @apply pb-10 grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-5 lg:gap-10;
+  }
+  .home__description__images__wrapper {
+    @apply grid items-center lg:grid-cols-2 gap-5 lg:justify-between;
+  }
+  .home__description__images__wrapper .lastChild img {
+    @apply relative top-10;
+  }
+  /* Button */
+  .btn--primary {
+    @apply px-4 py-2 text-black font-medium bg-semilight border w-fit rounded-full transition duration-150 ease-in-out hover:text-primary hover:bg-white hover:border-primary inline-block;
+  }
+
+  /* About */
+  .about__wrapper {
+    @apply grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-5 text-white;
+  }
+  .about__details {
+    @apply justify-center items-center;
+  }
+  .about__details p {
+    @apply m-5 text-justify items-center;
+  }
+
+  /* CAtalog */
+  .catalog__card {
+    @apply bg-white w-fit drop-shadow-lg;
+  }
+  .catalog__wrapper {
+    @apply px-8 grid grid-cols-1 lg:grid-cols-3 gap-10 items-center justify-center;
+  }
+  .catalog__card__details h4 {
+    @apply text-secondary text-2xl font-semibold my-3;
+  }
+  .catalog__card__details {
+    @apply p-3;
+  }
+  .catalog__card__details p {
+    @apply my-2;
+  }
+  .catalog__card__details a {
+    @apply hover:text-semilight;
+  }
+  /* Footer */
+  .contact__wrapper {
+    @apply text-white flex justify-between;
+  }
+  .contact__icons__wrapper ul {
+    @apply flex flex-row gap-3 px-2 text-white;
+  }
+}
